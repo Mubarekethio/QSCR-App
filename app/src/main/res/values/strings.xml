@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">QSCRA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="alt_threshold_button_plus">Increasing threshold of detected sound
+        results button</string>
+    <string name="alt_threshold_button_minus">Decreasing threshold of detected sound
+        results button</string>
+    <string name="alt_bottom_sheet_chevron">Bottom sheet expandable indicator</string>
+    <string name="alt_bottom_sheet_thread_button_minus">Decrease the number of threads used</string>
+    <string name="alt_bottom_sheet_thread_button_plus">Increase the number of threads used</string>
+
+    <string name="label_inference_time">Inference Time</string>
+    <string name="label_confidence_threshold">Threshold</string>
+    <string name="label_delegate">Delegate</string>
+    <string name="label_max_results">Max results</string>
+    <string name="label_overlap">Overlap</string>
+    <string name="label_threads">Threads</string>
+
+    <string-array name="overlap_spinner_titles">
+        <item>0%</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+    </string-array>
+
+    <string-array name="delegate_spinner_titles">
+        <item>CPU</item>
+        <item>NNAPI</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="connect">Connect</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+
+    <!-- Shared_ Preference key -->
+
+
+    <string name="ofnum_result_shared_prefs">2</string>
+    <string name="thershold_shared_prefs">0.8</string>
+    <string name="num_thread_shared_prefs">2</string>
+
+    <string name="position_cur_model_shared_prefs">1</string>
+
+    <string name="overlap_value_shared_prefs">0.5</string>
+    <string name="overlap_position_shared_prefs">2</string>
+    <string name="cur_delegate_shared_prefs">0</string>
+
+
+
+    <string name="QafarafModel">"Current Model: Qafar-af"</string>
+    <string name="AmharicModel">"Current Model: አማርኛ"</string>
+
+    <string name="cpuDelgate">""Current Delgate: CPU""</string>
+    <string name="NNAPIDelegate">"Current Delgate: NNAPI"</string>
+
+    <string name="nuOverlap">"Number of Overlap:"</string>
+    <string name="nuResult">"Number of Result:"</string>
+
+    <string name="threshold">"Threshold:"</string>
+    <string name="thread">"Thread:"</string>
+
+
+
+
+
+
+
+
+</resources>

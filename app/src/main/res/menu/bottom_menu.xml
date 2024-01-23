@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/audioFragment"
+        android:icon="@drawable/home"
+        android:title="Audio" />
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/settings_24"
+        android:title="Setting" />
+    <item
+        android:id="@+id/fab"
+        android:title=""
+        android:enabled="false"/>
+    <item
+        android:id="@+id/connectFragment"
+        android:icon="@drawable/bluetooth_notconnect_24"
+        android:title="Connect" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/info_24"
+        android:title="About" />
+</menu>

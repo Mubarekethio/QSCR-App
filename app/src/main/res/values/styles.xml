@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ~ Copyright 2023 Mukee. All Rights Reserved.
+    ~ Name:- Mubarek Kebede
+    ~ Email:- mubare.k1449@gmail.com
+    ~ Ph.Number:- +251929920355/+251914070683
+    ~ Github:- https://github.com/Mubarekethio
+    ~ Linkedin:- https://www.linkedin.com/in/mubarek-kebede-582012148/
+-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
+    <style name="BottomSheetSpinnerItemStyle" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:textSize">25sp</item>
+    </style>
+</resources>
+
+
