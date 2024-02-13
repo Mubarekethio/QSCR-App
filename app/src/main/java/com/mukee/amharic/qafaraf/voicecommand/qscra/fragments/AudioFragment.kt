@@ -133,7 +133,9 @@ class AudioFragment : Fragment() {
                 frAudioBinding.inferenceTimeVal.text= null
                 //Toast.makeText(requireContext(), "Classification Stopped.", Toast.LENGTH_SHORT).show()
                 //arrayOfNulls<>().also { frAudioBinding.recyclerView.adapter = it }//adapter.categoryList[].null
+                //view.findNavController().navigate(R.id.audioFragment)
                 onPause()
+
             }else{
 
                 Toast.makeText(requireContext(), "Classification Started.", Toast.LENGTH_SHORT).show()
@@ -142,7 +144,7 @@ class AudioFragment : Fragment() {
                     audioClassificationListener
                 )
                 mainAudViewModel.readFromDataStorecModel.observe(viewLifecycleOwner) { cModel ->
-                    println(cModel)
+                    //println(cModel)
                     when(cModel){
                         "Amharic"->{
                             audioHelper.stopAudioClassification()

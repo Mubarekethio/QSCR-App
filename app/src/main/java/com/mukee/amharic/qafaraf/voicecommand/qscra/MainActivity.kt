@@ -80,18 +80,24 @@ class MainActivity : AppCompatActivity(){
         //To send the start and stop icon to start and stop the classification process
         var pras ="stop"
         btnSt.setOnClickListener{
+            //findNavController().navigate(R.id.audioFragment)
+
             //To Send state of the record icon to AudioFragment
             when(pras){
                 "stop"-> {
                     pras= "start"
                     activityMainBinding.start14.setImageDrawable(ContextCompat.getDrawable(baseContext, R.drawable.pause_24))
+                    navController.navigate(R.id.audioFragment)
                 }
                 "start"-> {
                     pras= "stop"
+                    Toast.makeText(this, "Classification Stopped.", Toast.LENGTH_SHORT).show()
                     activityMainBinding.start14.setImageDrawable(ContextCompat.getDrawable(baseContext, R.drawable.play_24))
+
                 }
             }
             viewModel.setStartB(pras)
+
             //println("from main: $sv")
         }
 
