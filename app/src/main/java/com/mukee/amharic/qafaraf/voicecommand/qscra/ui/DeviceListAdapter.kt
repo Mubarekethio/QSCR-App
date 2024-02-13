@@ -14,7 +14,6 @@ import com.mukee.amharic.qafaraf.voicecommand.qscra.MainActivity
 import com.mukee.amharic.qafaraf.voicecommand.qscra.R
 import kotlinx.coroutines.DelicateCoroutinesApi
 
-@Suppress("UNREACHABLE_CODE")
 @DelicateCoroutinesApi
 class DeviceListAdapter(private val context: Context, private val deviceList: List<Any>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
