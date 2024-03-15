@@ -29,6 +29,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 class MainActivity : AppCompatActivity(){
 
     private var backPressedTime: Long = 0
+
     private lateinit var mainActmodel: MainViewModel
     private lateinit var activityMainBinding: ActivityMainBinding
 
@@ -166,12 +167,10 @@ class MainActivity : AppCompatActivity(){
 
 
 
-    /*override fun onSupportNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-
-     */
 
     /**
      * Handles the back button press event.
@@ -187,6 +186,8 @@ class MainActivity : AppCompatActivity(){
         }
         backPressedTime = System.currentTimeMillis()
     }
+
+
 
 }
 

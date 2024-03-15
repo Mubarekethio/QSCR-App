@@ -34,7 +34,7 @@ class AudioClassificationHelper(
     var overlap: Float = DEFAULT_OVERLAP_VALUE,
     var numOfResults: Int = DEFAULT_NUM_OF_RESULTS,
     var currentDelegate: Int = 0,
-    var numThreads: Int = 2
+    var numThreads: Int = 4
 ) {
     private lateinit var classifier: AudioClassifier
     private lateinit var tensorAudio: TensorAudio

@@ -1,6 +1,6 @@
 package com.mukee.amharic.qafaraf.voicecommand.qscra.fragments
 
-import android.Manifest
+import android.Manifest.permission
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
@@ -16,61 +16,78 @@ import androidx.navigation.Navigation
 import com.mukee.amharic.qafaraf.voicecommand.qscra.R
 import com.mukee.amharic.qafaraf.voicecommand.qscra.fragments.PermissionsFragmentDirections.actionPermissionFragmentToAudioFragment
 
-/**
- * Fragment responsible for requesting necessary permissions.
- */
+
+//@RequiresApi(Build.VERSION_CODES.S)
+//private val PERMISSIONS_REQUIRED = arrayOf(permission.RECORD_AUDIO)
+//private val PERMISSIONS_REQUIRED1=arrayOf(permission.BLUETOOTH_ADMIN)
+
 @RequiresApi(Build.VERSION_CODES.S)
+private val PermissionRequired = arrayOf(permission.RECORD_AUDIO)
+
+
+
+
+
+/*
+ * The sole purpose of this fragment is to request permissions and, once granted, display the
+ * audio fragment to the user.
+ */
 class PermissionsFragment : Fragment() {
 
 
 
+    @RequiresApi(Build.VERSION_CODES.S)
+    private val PERMISSIONLOCATION= arrayOf(
+        permission.RECORD_AUDIO,
+        permission.BLUETOOTH_ADMIN,
+        permission.ACCESS_FINE_LOCATION,
+        permission.ACCESS_COARSE_LOCATION,
+        permission.ACCESS_LOCATION_EXTRA_COMMANDS,
+        permission.BLUETOOTH_SCAN,
+        permission.BLUETOOTH_CONNECT,
+        permission.BLUETOOTH_PRIVILEGED
+    )
+
     private val requestPermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted: Boolean ->
             if (isGranted) {
                 Toast.makeText(context, "Permission request granted", Toast.LENGTH_LONG).show()
                 navigateToAudioFragment()
             } else {
                 Toast.makeText(context, "Permission request denied", Toast.LENGTH_LONG).show()
-                // Handle permission request denied error
             }
         }
 
+    //@RequiresApi(Build.VERSION_CODES.S)
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestPermissionsIfNeeded()
-    }
 
-    /**
-     * Requests permissions if needed.
-     */
-    private fun requestPermissionsIfNeeded() {
-        val permissionsToRequest = mutableListOf<String>()
 
-        // Check if each permission is already granted, and add it to the list if not
-        for (permission in PERMISSIONS_REQUIRED) {
-            if (ContextCompat.checkSelfPermission(requireContext(), permission)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
-                permissionsToRequest.add(permission)
+        val permission1 =
+            ContextCompat.checkSelfPermission(requireContext(), permission.BLUETOOTH_ADMIN)
+        val permission2=
+            ContextCompat.checkSelfPermission(requireContext(), permission.RECORD_AUDIO)
+
+
+        if(permission1!= PackageManager.PERMISSION_GRANTED || PackageManager.PERMISSION_GRANTED==permission2){
+            navigateToAudioFragment()
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                PERMISSIONLOCATION,
+                1
+            )
+        }
+        else {
+            with(requestPermissionLauncher) {
+                launch(permission.RECORD_AUDIO)
             }
         }
 
-        // If there are permissions to request, launch the permission request
-        if (permissionsToRequest.isNotEmpty()) {
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                permissionsToRequest.toTypedArray(),
-                REQUEST_PERMISSION_CODE
-            )
-        } else {
-            // If no permissions need to be requested, navigate to the audio fragment
-            navigateToAudioFragment()
-        }
     }
 
-    /**
-     * Navigates to the audio fragment.
-     */
     private fun navigateToAudioFragment() {
         lifecycleScope.launchWhenStarted {
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView).navigate(
@@ -80,23 +97,12 @@ class PermissionsFragment : Fragment() {
     }
 
     companion object {
-        private const val REQUEST_PERMISSION_CODE = 123
-        private val PERMISSIONS_REQUIRED = arrayOf(
-            Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.BLUETOOTH_ADMIN,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
-            Manifest.permission.BLUETOOTH_SCAN,
-            Manifest.permission.BLUETOOTH_CONNECT,
-            Manifest.permission.BLUETOOTH_PRIVILEGED
-        )
-
-        /**
-         * Convenience method used to check if all permissions required by this app are granted.
-         */
-        fun hasPermissions(context: Context) = PERMISSIONS_REQUIRED.all {
+        /** Convenience method used to check if all permissions required by this app are granted */
+        @RequiresApi(Build.VERSION_CODES.S)
+        fun hasPermissions(context: Context) = PermissionRequired.all {
             ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
+            //ContextCompat.checkSelfPermission(context, it)==PackageManager.PERMISSION_GRANTED
         }
+
     }
 }
