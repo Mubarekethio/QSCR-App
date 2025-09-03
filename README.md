@@ -54,10 +54,10 @@ QSCRA enables users, especially individuals with physical disabilities, to contr
 
 ### Download & Installation
 #### From GitHub
-1. Visit [QSCRA GitHub Releases](https://github.com/Mubarekethio/QSCR-App/releases/download/v2.0/QSCR.apk).  
-2. Download the APK to your device.  
-3. Open the APK via your file manager and follow on-screen prompts.  
-4. Launch the app from the home screen or app drawer.  
+1. Visit [QSCRA GitHub Releases](https://github.com/Mubarekethio/QSCR-App/releases/tag/v2.0).
+3. Download the APK [here](https://github.com/Mubarekethio/QSCR-App/releases/download/v2.0/QSCR.apk) to your device.  
+4. Open the APK via your file manager and follow on-screen prompts.  
+5. Launch the app from the home screen or app drawer.  
 
 #### From Other Sources
 1. Enable installation from unknown sources: `Settings > Security > Unknown sources`.  
@@ -181,11 +181,6 @@ QSCRA enables users, especially individuals with physical disabilities, to contr
 - **v1.0.0**: Initial release with voice recognition and Bluetooth.  
 - **v1.1.0**: Improved voice recognition, UI updates, Bluetooth stability.  
 - **v1.2.0**: Real-time feedback, volume adjustment, model optimization.  
-- **v1.3.0**: Additional languages, accessibility enhancements, auto-detect.  
-- **v1.4.0**: Multi-device support, export logs, better compatibility.  
-- **v1.5.0**: OTA updates, offline recognition, voice shortcuts.  
-- **v1.6.0**: Voice scheduling, history, accuracy improvement.  
-- **v1.7.0**: Third-party services, user profiles, external device integration.  
 
 ---
 
